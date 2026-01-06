@@ -33,14 +33,29 @@ export default function Home() {
               <span className="text-xs font-mono font-bold uppercase tracking-wide text-muted-foreground">Open Source Security Tools</span>
             </div>
             
-            <div className="mb-8 flex items-center gap-4">
-              <div className="w-16 h-16 bg-black flex items-center justify-center rounded-xl shadow-xl">
-                <Shield className="w-10 h-10 text-accent" />
+            <div className="mb-10 flex flex-col md:flex-row md:items-center gap-6">
+              <motion.div 
+                whileHover={{ rotate: 360, scale: 1.1 }}
+                transition={{ duration: 0.8, ease: "anticipate" }}
+                className="w-20 h-20 bg-black flex items-center justify-center rounded-2xl shadow-[0_0_30px_rgba(0,0,0,0.1)] relative group cursor-pointer"
+              >
+                <div className="absolute inset-0 bg-accent/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all opacity-0 group-hover:opacity-100" />
+                <Shield className="w-12 h-12 text-accent relative z-10" />
+                <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-accent flex items-center justify-center rounded-lg border-2 border-black">
+                  <Terminal className="w-3 h-3 text-black" />
+                </div>
+              </motion.div>
+              <div>
+                <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.8] font-sans">
+                  SPACE<span className="text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-500">HUHN</span>
+                </h1>
+                <p className="text-accent font-mono text-sm font-bold tracking-[0.3em] uppercase mt-2">Technologies</p>
               </div>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.9] font-sans">
-                WE MAKE TOOLS FOR <span className="text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-500">CURIOUS PEOPLE.</span>
-              </h1>
             </div>
+
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1] mb-10 max-w-3xl">
+              WE MAKE TOOLS FOR <span className="italic font-serif serif text-muted-foreground/40">CURIOUS PEOPLE.</span>
+            </h2>
             
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed mb-12 font-light">
               Explore the world of ethical hacking and cybersecurity with our open-source hardware and software.
