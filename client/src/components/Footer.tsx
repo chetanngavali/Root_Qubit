@@ -1,4 +1,5 @@
 import { Github, Twitter, Instagram, Mail, Heart } from "lucide-react";
+import { Link } from "wouter";
 
 export function Footer() {
   return (
