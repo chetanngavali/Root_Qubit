@@ -25,8 +25,8 @@ export function Navbar() {
 
         <div className="flex items-center gap-6 md:gap-8">
           <div className="hidden md:flex items-center gap-6 font-mono text-sm font-medium">
-            <a href="https://blog.spacehuhn.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">BLOG</a>
-            <a href="https://docs.spacehuhn.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">DOCS</a>
+            <Link href="/blog" className="hover:text-accent transition-colors">BLOG</Link>
+            <Link href="/docs" className="hover:text-accent transition-colors">DOCS</Link>
             <Link href="/projects" className="hover:text-accent transition-colors">PROJECTS</Link>
           </div>
 
