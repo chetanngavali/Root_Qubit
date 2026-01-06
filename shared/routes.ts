@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { insertProjectSchema, projects } from './schema';
+import { insertProjectSchema, projects, blogPosts } from './schema';
 
 export const api = {
   projects: {
@@ -15,6 +15,23 @@ export const api = {
       path: '/api/projects/:id',
       responses: {
         200: z.custom<typeof projects.$inferSelect>(),
+        404: z.object({ message: z.string() }),
+      },
+    }
+  },
+  blog: {
+    list: {
+      method: 'GET' as const,
+      path: '/api/blog',
+      responses: {
+        200: z.array(z.custom<typeof blogPosts.$inferSelect>()),
+      },
+    },
+    get: {
+      method: 'GET' as const,
+      path: '/api/blog/:id',
+      responses: {
+        200: z.custom<typeof blogPosts.$inferSelect>(),
         404: z.object({ message: z.string() }),
       },
     }
