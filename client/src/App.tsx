@@ -9,6 +9,7 @@ import BlogPost from "@/pages/BlogPost";
 import Contact from "@/pages/Contact";
 import Docs from "@/pages/Docs";
 import Store from "@/pages/Store";
+import Projects from "@/pages/Projects";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -20,6 +21,7 @@ function Router() {
       <Route path="/contact" component={Contact} />
       <Route path="/docs" component={Docs} />
       <Route path="/store" component={Store} />
+      <Route path="/projects" component={Projects} />
       <Route component={NotFound} />
     </Switch>
   );
