@@ -36,8 +36,8 @@ export class DatabaseStorage implements IStorage {
     return post;
   }
 
-  async createBlogPost(insertPost: InsertBlogPost): Promise<BlogPost> {
-    const [post] = await db.insert(blogPosts).values(insertPost).returning();
+  async createBlogPost(insertBlogPost: InsertBlogPost): Promise<BlogPost> {
+    const [post] = await db.insert(blogPosts).values(insertBlogPost).returning();
     return post;
   }
 }

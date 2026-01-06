@@ -2,8 +2,9 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ProjectCard } from "@/components/ProjectCard";
 import { useProjects } from "@/hooks/use-projects";
-import { ArrowRight, Cpu, Code, BookOpen, Terminal, Wifi } from "lucide-react";
+import { ArrowRight, Cpu, Code, BookOpen, Terminal, Wifi, Shield } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 
 export default function Home() {
   const { data: projects, isLoading } = useProjects();
@@ -32,28 +33,33 @@ export default function Home() {
               <span className="text-xs font-mono font-bold uppercase tracking-wide text-muted-foreground">Open Source Security Tools</span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.9] mb-8 font-sans">
-              WE MAKE TOOLS FOR <span className="text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-500">CURIOUS PEOPLE.</span>
-            </h1>
+            <div className="mb-8 flex items-center gap-4">
+              <div className="w-16 h-16 bg-black flex items-center justify-center rounded-xl shadow-xl">
+                <Shield className="w-10 h-10 text-accent" />
+              </div>
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.9] font-sans">
+                WE MAKE TOOLS FOR <span className="text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-500">CURIOUS PEOPLE.</span>
+              </h1>
+            </div>
             
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed mb-12 font-light">
               Explore the world of ethical hacking and cybersecurity with our open-source hardware and software.
             </p>
             
             <div className="flex flex-wrap items-center gap-4">
-              <a 
-                href="https://spacehuhn.store" 
+              <Link 
+                href="/store" 
                 className="px-8 py-4 bg-black text-white font-mono font-bold hover:bg-accent hover:text-black transition-all duration-300 flex items-center gap-3 shadow-lg shadow-black/10"
               >
                 VISIT STORE
                 <ArrowRight className="w-5 h-5" />
-              </a>
-              <a 
-                href="https://docs.spacehuhn.com" 
+              </Link>
+              <Link 
+                href="/docs" 
                 className="px-8 py-4 border-2 border-black font-mono font-bold hover:bg-secondary transition-colors duration-300"
               >
                 READ DOCS
-              </a>
+              </Link>
             </div>
           </motion.div>
         </div>
