@@ -40,10 +40,10 @@ export function Footer() {
           <div>
             <h3 className="font-mono font-bold mb-6 text-accent">Resources</h3>
             <ul className="space-y-4 text-sm text-primary-foreground/60">
-              <li><a href="#" className="hover:text-white transition-colors">Documentation</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Shop</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
+              <li><Link href="/docs" className="hover:text-white transition-colors">Documentation</Link></li>
+              <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
+              <li><Link href="/store" className="hover:text-white transition-colors">Shop</Link></li>
+              <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
         </div>
