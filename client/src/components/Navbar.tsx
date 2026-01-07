@@ -26,8 +26,9 @@ export function Navbar() {
         <div className="flex items-center gap-6 md:gap-8">
           <div className="hidden md:flex items-center gap-6 font-mono text-sm font-medium">
             <Link href="/blog" className="hover:text-accent transition-colors">BLOG</Link>
-            <Link href="/contact" className="hover:text-accent transition-colors">CONTACT</Link>
             <Link href="/projects" className="hover:text-accent transition-colors">PROJECTS</Link>
+            <Link href="/about" className="hover:text-accent transition-colors">ABOUT</Link>
+            <Link href="/contact" className="hover:text-accent transition-colors">CONTACT</Link>
           </div>
 
           <div className="flex items-center gap-3">

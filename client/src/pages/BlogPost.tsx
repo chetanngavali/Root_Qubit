@@ -9,7 +9,7 @@ import { api, buildUrl } from "@shared/routes";
 export default function BlogPost() {
   const { id } = useParams();
   const { data: post, isLoading } = useQuery<BlogPost>({
-    queryKey: [buildUrl(api.blog.get.path, { id: id! })],
+    queryKey: [`/api/blog/${id}`],
   });
 
   if (isLoading) {

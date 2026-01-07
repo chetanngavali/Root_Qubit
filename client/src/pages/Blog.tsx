@@ -9,7 +9,7 @@ import { api } from "@shared/routes";
 
 export default function Blog() {
   const { data: posts, isLoading } = useQuery<BlogPost[]>({
-    queryKey: [api.blog.list.path],
+    queryKey: ["/api/blog"],
   });
 
   return (
