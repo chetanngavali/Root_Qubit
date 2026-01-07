@@ -14,69 +14,87 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 md:pt-48 md:pb-32 relative overflow-hidden">
+      <section className="pt-40 pb-20 md:pt-60 md:pb-40 relative overflow-hidden">
         {/* Background decorative elements */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-secondary -z-10 skew-x-12 translate-x-20 hidden lg:block" />
-        <div className="absolute bottom-20 left-10 text-9xl font-mono font-bold text-black/[0.02] -z-10 pointer-events-none select-none">
-          HACK
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-secondary/30 -z-10 skew-x-12 translate-x-1/4 hidden lg:block" />
+        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-accent/5 rounded-full blur-[120px] -z-10" />
+        <div className="absolute bottom-20 left-10 text-[20rem] font-sans font-black text-black/[0.015] -z-10 pointer-events-none select-none tracking-tighter">
+          HUHN
         </div>
 
         <div className="container-custom">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl"
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1 mb-8 border border-black/10 bg-secondary/50 rounded-full">
-              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              <span className="text-xs font-mono font-bold uppercase tracking-wide text-muted-foreground">Open Source Security Tools</span>
-            </div>
-            
-            <div className="mb-10 flex flex-col md:flex-row md:items-center gap-6">
-              <motion.div 
-                whileHover={{ rotate: 360, scale: 1.1 }}
-                transition={{ duration: 0.8, ease: "anticipate" }}
-                className="w-20 h-20 bg-black flex items-center justify-center rounded-2xl shadow-[0_0_30px_rgba(0,0,0,0.1)] relative group cursor-pointer"
-              >
-                <div className="absolute inset-0 bg-accent/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all opacity-0 group-hover:opacity-100" />
-                <Shield className="w-12 h-12 text-accent relative z-10" />
-                <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-accent flex items-center justify-center rounded-lg border-2 border-black">
-                  <Terminal className="w-3 h-3 text-black" />
-                </div>
-              </motion.div>
-              <div>
-                <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.8] font-sans">
-                  SPACE<span className="text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-500">HUHN</span>
-                </h1>
-                <p className="text-accent font-mono text-sm font-bold tracking-[0.3em] uppercase mt-2">Technologies</p>
+          <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="max-w-4xl flex-1"
+            >
+              <div className="inline-flex items-center gap-3 px-4 py-1.5 mb-10 border border-black/5 bg-white shadow-sm rounded-full">
+                <span className="w-2 h-2 rounded-full bg-accent animate-pulse shadow-[0_0_8px_var(--accent)]" />
+                <span className="text-[10px] font-mono font-black uppercase tracking-widest text-muted-foreground">Est. 2016 // Security Research</span>
               </div>
-            </div>
+              
+              <div className="mb-12">
+                <h1 className="text-7xl md:text-9xl lg:text-[10rem] font-black tracking-tighter leading-[0.8] font-sans mb-4">
+                  SPACE<span className="text-transparent bg-clip-text bg-gradient-to-br from-black via-gray-700 to-gray-400">HUHN</span>
+                </h1>
+                <div className="flex items-center gap-4">
+                  <div className="h-px flex-1 bg-black/10" />
+                  <p className="text-accent font-mono text-sm font-black tracking-[0.4em] uppercase">Technologies</p>
+                  <div className="h-px flex-1 bg-black/10" />
+                </div>
+              </div>
 
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1] mb-10 max-w-3xl">
-              WE MAKE TOOLS FOR <span className="italic font-serif serif text-muted-foreground/40">CURIOUS PEOPLE.</span>
-            </h2>
-            
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl leading-relaxed mb-12 font-light">
-              Explore the world of ethical hacking and cybersecurity with our open-source hardware and software.
-            </p>
-            
-            <div className="flex flex-wrap items-center gap-4">
-              <Link 
-                href="/store" 
-                className="px-8 py-4 bg-black text-white font-mono font-bold hover:bg-accent hover:text-black transition-all duration-300 flex items-center gap-3 shadow-lg shadow-black/10"
-              >
-                VISIT STORE
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-              <Link 
-                href="/docs" 
-                className="px-8 py-4 border-2 border-black font-mono font-bold hover:bg-secondary transition-colors duration-300"
-              >
-                READ DOCS
-              </Link>
-            </div>
-          </motion.div>
+              <h2 className="text-4xl md:text-6xl font-black tracking-tight leading-[1] mb-12 max-w-2xl">
+                OPEN SOURCE <span className="text-muted-foreground/40 italic font-serif">SECURITY</span> TOOLS FOR CURIOUS PEOPLE.
+              </h2>
+              
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-xl leading-relaxed mb-16 font-light">
+                Bridging the gap between hardware and cybersecurity with transparent, educational, and powerful tools.
+              </p>
+              
+              <div className="flex flex-wrap items-center gap-6">
+                <Link 
+                  href="/store" 
+                  className="px-10 py-5 bg-black text-white font-mono font-black hover:bg-accent hover:text-black transition-all duration-500 flex items-center gap-4 shadow-2xl shadow-black/20 rounded-xl hover:-translate-y-1 active:scale-95"
+                >
+                  EXPLORE GEAR
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <Link 
+                  href="/projects" 
+                  className="px-10 py-5 border-2 border-black font-mono font-black hover:bg-secondary transition-all duration-300 rounded-xl hover:-translate-y-1 active:scale-95"
+                >
+                  VIEW PROJECTS
+                </Link>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+              className="relative hidden lg:block"
+            >
+              <div className="w-[500px] h-[500px] bg-black rounded-[4rem] flex items-center justify-center shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+                <Shield className="w-48 h-48 text-accent shadow-accent/50 filter drop-shadow-[0_0_20px_rgba(var(--accent),0.3)]" />
+                <div className="absolute top-10 right-10 text-accent/10 font-mono text-xs rotate-90 tracking-[1em]">SECURE // RESEARCH</div>
+                <div className="absolute bottom-10 left-10 flex flex-col gap-2">
+                  <div className="w-8 h-1 bg-accent/20 rounded-full" />
+                  <div className="w-12 h-1 bg-accent rounded-full" />
+                  <div className="w-6 h-1 bg-accent/40 rounded-full" />
+                </div>
+              </div>
+              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-secondary border border-border rounded-3xl flex items-center justify-center shadow-xl rotate-12 hover:rotate-0 transition-transform duration-500">
+                <Terminal className="w-16 h-16 text-black" />
+              </div>
+              <div className="absolute -top-6 -right-6 w-32 h-32 bg-accent rounded-full flex items-center justify-center shadow-2xl animate-bounce-slow">
+                <Cpu className="w-12 h-12 text-black" />
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
