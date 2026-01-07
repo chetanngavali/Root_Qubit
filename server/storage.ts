@@ -1,6 +1,10 @@
-import { db } from "./db";
-import { projects, blogPosts, type Project, type InsertProject, type BlogPost, type InsertBlogPost } from "@shared/schema";
+import { db, pool } from "./db";
+import { projects, blogPosts, users, type Project, type InsertProject, type BlogPost, type InsertBlogPost, type User, type InsertUser } from "@shared/schema";
 import { eq } from "drizzle-orm";
+import session from "express-session";
+import connectPg from "connect-pg-simple";
+
+const PostgresSessionStore = connectPg(session);
 
 export interface IStorage {
   getProjects(): Promise<Project[]>;
@@ -10,9 +14,39 @@ export interface IStorage {
   getBlogPosts(): Promise<BlogPost[]>;
   getBlogPost(id: number): Promise<BlogPost | undefined>;
   createBlogPost(post: InsertBlogPost): Promise<BlogPost>;
+
+  getUser(id: number): Promise<User | undefined>;
+  getUserByUsername(username: string): Promise<User | undefined>;
+  createUser(user: InsertUser): Promise<User>;
+
+  sessionStore: any;
 }
 
 export class DatabaseStorage implements IStorage {
+  sessionStore: any;
+
+  constructor() {
+    this.sessionStore = new PostgresSessionStore({ 
+      pool, 
+      createTableIfMissing: true 
+    });
+  }
+
+  async getUser(id: number): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.id, id));
+    return user;
+  }
+
+  async getUserByUsername(username: string): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.username, username));
+    return user;
+  }
+
+  async createUser(insertUser: InsertUser): Promise<User> {
+    const [user] = await db.insert(users).values(insertUser).returning();
+    return user;
+  }
+
   async getProjects(): Promise<Project[]> {
     return await db.select().from(projects);
   }

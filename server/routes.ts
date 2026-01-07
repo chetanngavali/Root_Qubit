@@ -2,11 +2,14 @@ import type { Express } from "express";
 import type { Server } from "http";
 import { storage } from "./storage";
 import { api } from "@shared/routes";
+import { setupAuth } from "./auth";
 
 export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
+  setupAuth(app);
+
   app.get(api.projects.list.path, async (req, res) => {
     const projects = await storage.getProjects();
     res.json(projects);

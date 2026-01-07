@@ -1,6 +1,13 @@
-import { pgTable, text, serial, varchar, timestamp } from "drizzle-orm/pg-core";
+import { pgTable, text, serial, varchar, timestamp, boolean } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
+
+export const users = pgTable("users", {
+  id: serial("id").primaryKey(),
+  username: text("username").notNull().unique(),
+  password: text("password").notNull(),
+  isAdmin: boolean("is_admin").default(false).notNull(),
+});
 
 export const projects = pgTable("projects", {
   id: serial("id").primaryKey(),
@@ -23,8 +30,11 @@ export const blogPosts = pgTable("blog_posts", {
 
 export const insertProjectSchema = createInsertSchema(projects).omit({ id: true });
 export const insertBlogPostSchema = createInsertSchema(blogPosts).omit({ id: true, publishedAt: true });
+export const insertUserSchema = createInsertSchema(users).omit({ id: true });
 
 export type Project = typeof projects.$inferSelect;
 export type InsertProject = z.infer<typeof insertProjectSchema>;
 export type BlogPost = typeof blogPosts.$inferSelect;
 export type InsertBlogPost = z.infer<typeof insertBlogPostSchema>;
+export type User = typeof users.$inferSelect;
+export type InsertUser = z.infer<typeof insertUserSchema>;
