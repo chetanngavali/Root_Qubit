@@ -22,10 +22,10 @@ export default function Projects() {
       <Navbar />
       <main className="flex-1 pt-32 pb-20">
         <div className="container-custom">
-          <header className="mb-16">
+          <header className="mb-16 text-center">
             <h1 className="text-5xl font-black mb-4 tracking-tighter">PROJECTS</h1>
-            <div className="h-1 w-24 bg-accent"></div>
-            <p className="mt-6 text-xl text-muted-foreground max-w-2xl font-light">
+            <div className="h-1 w-24 bg-accent mx-auto"></div>
+            <p className="mt-6 text-xl text-muted-foreground max-w-2xl font-light mx-auto">
               Open source tools and hardware designed for security testing and education.
             </p>
           </header>

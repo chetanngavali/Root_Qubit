@@ -15,9 +15,9 @@ export default function About() {
       <Navbar />
       <main className="flex-1 pt-32 pb-20">
         <div className="container-custom">
-          <header className="mb-16">
+          <header className="mb-16 text-center">
             <h1 className="text-5xl font-black mb-4 tracking-tighter uppercase">About Me</h1>
-            <div className="h-1 w-24 bg-accent"></div>
+            <div className="h-1 w-24 bg-accent mx-auto"></div>
           </header>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
