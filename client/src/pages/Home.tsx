@@ -97,19 +97,23 @@ export default function Home() {
       {/* Philosophy / Features Section */}
       <section className="py-24 bg-black text-white relative">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="flex flex-col items-center text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black mb-4 uppercase tracking-tighter">Our Philosophy</h2>
+            <div className="h-1 w-24 bg-accent"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="space-y-6"
+              className="space-y-6 flex flex-col items-center"
             >
               <div className="w-16 h-16 bg-white/10 flex items-center justify-center border border-white/20">
                 <Cpu className="w-8 h-8 text-accent" />
               </div>
               <h3 className="text-2xl font-mono font-bold">Open Hardware</h3>
-              <p className="text-white/60 leading-relaxed">
+              <p className="text-white/60 leading-relaxed max-w-sm">
                 We believe in transparent technology. Our hardware designs are open source, allowing you to study, modify, and build them yourself.
               </p>
             </motion.div>
@@ -119,13 +123,13 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="space-y-6"
+              className="space-y-6 flex flex-col items-center"
             >
               <div className="w-16 h-16 bg-white/10 flex items-center justify-center border border-white/20">
                 <BookOpen className="w-8 h-8 text-accent" />
               </div>
               <h3 className="text-2xl font-mono font-bold">Education First</h3>
-              <p className="text-white/60 leading-relaxed">
+              <p className="text-white/60 leading-relaxed max-w-sm">
                 Our tools are designed to teach, not just to use. We provide extensive documentation and tutorials to help you understand the "how" and "why".
               </p>
             </motion.div>
@@ -135,13 +139,13 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="space-y-6"
+              className="space-y-6 flex flex-col items-center"
             >
               <div className="w-16 h-16 bg-white/10 flex items-center justify-center border border-white/20">
                 <Code className="w-8 h-8 text-accent" />
               </div>
               <h3 className="text-2xl font-mono font-bold">Community Driven</h3>
-              <p className="text-white/60 leading-relaxed">
+              <p className="text-white/60 leading-relaxed max-w-sm">
                 Join a global community of makers, hackers, and security enthusiasts. Share your modifications and learn from others.
               </p>
             </motion.div>
@@ -152,13 +156,13 @@ export default function Home() {
       {/* Featured Projects Grid */}
       <section className="py-24 md:py-32 bg-secondary/30">
         <div className="container-custom">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div className="flex flex-col items-center text-center mb-16 gap-6">
             <div>
-              <h2 className="text-4xl md:text-5xl font-black mb-4">FEATURED PROJECTS</h2>
-              <div className="h-1 w-24 bg-accent"></div>
+              <h2 className="text-4xl md:text-5xl font-black mb-4 uppercase tracking-tighter">FEATURED PROJECTS</h2>
+              <div className="h-1 w-24 bg-accent mx-auto"></div>
             </div>
-            <a href="https://github.com/spacehuhntech" className="group flex items-center gap-2 font-mono text-sm font-bold uppercase hover:text-accent transition-colors">
-              View all on GitHub 
+            <a href="/projects" className="group flex items-center gap-2 font-mono text-sm font-bold uppercase hover:text-accent transition-colors">
+              View all projects
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
@@ -188,7 +192,7 @@ export default function Home() {
       {/* Newsletter / CTA Section */}
       <section className="py-24 border-t border-border">
         <div className="container-custom">
-          <div className="bg-black text-white p-8 md:p-16 relative overflow-hidden">
+          <div className="bg-black text-white p-8 md:p-16 relative overflow-hidden flex flex-col items-center text-center">
             <Wifi className="absolute -right-10 -bottom-10 w-64 h-64 text-white/5" />
             
             <div className="relative z-10 max-w-2xl">
@@ -198,7 +202,7 @@ export default function Home() {
                 No spam, just tech.
               </p>
               
-              <form className="flex flex-col sm:flex-row gap-4" onSubmit={(e) => e.preventDefault()}>
+              <form className="flex flex-col sm:flex-row gap-4 w-full" onSubmit={(e) => e.preventDefault()}>
                 <input 
                   type="email" 
                   placeholder="Enter your email" 
