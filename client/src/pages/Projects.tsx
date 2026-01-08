@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
-import { Github, Package, Download, Terminal } from "lucide-react";
+import { Github, Package, Download, Terminal, Cpu } from "lucide-react";
 
 export default function Projects() {
   const categories = [
@@ -9,6 +9,11 @@ export default function Projects() {
       name: "Hardware",
       icon: <Package className="w-5 h-5" />,
       projects: ["ESP8266 Deauther", "USB Nova", "HackHeld Vega"]
+    },
+    {
+      name: "PCB Designs",
+      icon: <Cpu className="w-5 h-5" />,
+      projects: ["Deauther Watch V3", "USB Nova S3", "HackHeld OLED Shield"]
     },
     {
       name: "Software",
