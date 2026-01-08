@@ -1,11 +1,12 @@
 import { Link, useLocation } from "wouter";
-import { Terminal, Github, ShoppingBag, Shield, Menu, X } from "lucide-react";
+import { Terminal, Github, ShoppingBag, Shield, Menu, X, Search } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [location] = useLocation();
 
   useEffect(() => {
@@ -45,7 +46,7 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="flex items-center gap-8 lg:gap-12">
+        <div className="flex items-center gap-4 lg:gap-8">
           <div className="hidden lg:flex items-center gap-8 font-mono text-sm font-black">
             {navLinks.map((link) => (
               <Link 
@@ -60,6 +61,34 @@ export function Navbar() {
           </div>
 
           <div className="flex items-center gap-2 md:gap-4">
+            {/* Search Bar */}
+            <div className="relative flex items-center">
+              <AnimatePresence>
+                {isSearchOpen && (
+                  <motion.div
+                    initial={{ width: 0, opacity: 0 }}
+                    animate={{ width: 200, opacity: 1 }}
+                    exit={{ width: 0, opacity: 0 }}
+                    className="absolute right-10 overflow-hidden"
+                  >
+                    <input
+                      type="text"
+                      placeholder="Search..."
+                      className="w-full px-4 py-2 bg-secondary/50 border border-border rounded-xl font-mono text-xs focus:outline-none focus:border-accent"
+                      autoFocus
+                    />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+              <button
+                onClick={() => setIsSearchOpen(!isSearchOpen)}
+                className="p-2.5 hover:bg-secondary rounded-xl transition-all"
+                aria-label="Search"
+              >
+                <Search className="w-5 h-5" />
+              </button>
+            </div>
+
             <a 
               href="https://github.com/spacehuhntech" 
               target="_blank" 
