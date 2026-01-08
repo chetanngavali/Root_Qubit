@@ -12,6 +12,7 @@ import Contact from "@/pages/Contact";
 import Docs from "@/pages/Docs";
 import Store from "@/pages/Store";
 import Projects from "@/pages/Projects";
+import PCBDesigns from "@/pages/PCBDesigns";
 import About from "@/pages/About";
 import AdminLogin from "@/pages/AdminLogin";
 import AdminDashboard from "@/pages/AdminDashboard";
@@ -27,6 +28,7 @@ function Router() {
       <Route path="/docs" component={Docs} />
       <Route path="/store" component={Store} />
       <Route path="/projects" component={Projects} />
+      <Route path="/pcb-designs" component={PCBDesigns} />
       <Route path="/about" component={About} />
       <Route path="/admin/login" component={AdminLogin} />
       <ProtectedRoute path="/admin/dashboard" component={AdminDashboard} />

@@ -24,6 +24,7 @@ export function Navbar() {
   const navLinks = [
     { href: "/", label: "HOME" },
     { href: "/projects", label: "PROJECTS" },
+    { href: "/pcb-designs", label: "PCB DESIGNS" },
     { href: "/docs", label: "DOCS" },
     { href: "/blog", label: "BLOG" },
     { href: "/about", label: "ABOUT" },

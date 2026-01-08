@@ -11,11 +11,6 @@ export default function Projects() {
       projects: ["ESP8266 Deauther", "USB Nova", "HackHeld Vega"]
     },
     {
-      name: "PCB Designs",
-      icon: <Cpu className="w-5 h-5" />,
-      projects: ["Deauther Watch V3", "USB Nova S3", "HackHeld OLED Shield"]
-    },
-    {
       name: "Software",
       icon: <Terminal className="w-5 h-5" />,
       projects: ["Deauther V2", "WiFi Duck", "Spacehuhn Docs"]
