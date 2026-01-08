@@ -1,8 +1,8 @@
-# Spacehuhn Technologies Portfolio
+# TechnoHacks Edutech IoT Portfolio
 
 ## Overview
 
-A portfolio and showcase website for Spacehuhn Technologies, featuring open-source hacking tools and security projects. The application displays hardware/software projects, blog posts, and company information with a modern, tech-focused design aesthetic.
+A portfolio and showcase website for TechnoHacks Edutech IoT, featuring open-source hacking tools and security projects. The application displays hardware/software projects, blog posts, and company information with a modern, tech-focused design aesthetic.
 
 ## User Preferences
 

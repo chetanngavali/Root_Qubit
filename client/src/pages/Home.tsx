@@ -19,7 +19,7 @@ export default function Home() {
         <div className="absolute top-0 right-0 w-1/2 h-full bg-secondary/30 -z-10 skew-x-12 translate-x-1/4 hidden lg:block" />
         <div className="absolute top-1/4 -left-20 w-96 h-96 bg-accent/5 rounded-full blur-[120px] -z-10" />
         <div className="absolute bottom-20 left-10 text-[20rem] font-sans font-black text-black/[0.015] -z-10 pointer-events-none select-none tracking-tighter">
-          HUHN
+          IOT
         </div>
 
         <div className="container-custom">
@@ -36,12 +36,12 @@ export default function Home() {
               </div>
               
               <div className="mb-12">
-                <h1 className="text-7xl md:text-9xl lg:text-[10rem] font-black tracking-tighter leading-[0.8] font-sans mb-4">
-                  SPACE<span className="text-transparent bg-clip-text bg-gradient-to-br from-black via-gray-700 to-gray-400">HUHN</span>
+                <h1 className="text-7xl md:text-9xl lg:text-[10rem] font-black tracking-tighter leading-[0.8] font-sans mb-4 uppercase">
+                  Techno<span className="text-transparent bg-clip-text bg-gradient-to-br from-black via-gray-700 to-gray-400">Hacks</span>
                 </h1>
                 <div className="flex items-center gap-6 justify-center">
                   <div className="h-px w-20 bg-black/10" />
-                  <p className="text-accent font-mono text-sm font-black tracking-[0.4em] uppercase">Technologies</p>
+                  <p className="text-accent font-mono text-sm font-black tracking-[0.4em] uppercase">Edutech IoT</p>
                   <Shield className="w-5 h-5 text-accent" />
                   <div className="h-px w-20 bg-black/10" />
                 </div>
