@@ -60,21 +60,22 @@ export function Navbar() {
             ))}
           </div>
 
-          <div className="flex items-center gap-2 md:gap-4">
+          <div className="flex items-center gap-2 md:gap-4 ml-auto">
             {/* Search Bar */}
-            <div className="relative flex items-center">
+            <div className="relative flex items-center justify-end">
               <AnimatePresence>
                 {isSearchOpen && (
                   <motion.div
                     initial={{ width: 0, opacity: 0 }}
-                    animate={{ width: 200, opacity: 1 }}
+                    animate={{ width: "min(300px, 40vw)", opacity: 1 }}
                     exit={{ width: 0, opacity: 0 }}
-                    className="absolute right-10 overflow-hidden"
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    className="absolute right-full mr-2"
                   >
                     <input
                       type="text"
                       placeholder="Search..."
-                      className="w-full px-4 py-2 bg-secondary/50 border border-border rounded-xl font-mono text-xs focus:outline-none focus:border-accent"
+                      className="w-full px-4 py-2 bg-secondary/80 backdrop-blur-md border border-border rounded-xl font-mono text-xs focus:outline-none focus:border-accent shadow-inner"
                       autoFocus
                     />
                   </motion.div>
@@ -82,10 +83,10 @@ export function Navbar() {
               </AnimatePresence>
               <button
                 onClick={() => setIsSearchOpen(!isSearchOpen)}
-                className="p-2.5 hover:bg-secondary rounded-xl transition-all"
+                className={`p-2.5 rounded-xl transition-all ${isSearchOpen ? "bg-secondary text-accent" : "hover:bg-secondary"}`}
                 aria-label="Search"
               >
-                <Search className="w-5 h-5" />
+                {isSearchOpen ? <X className="w-5 h-5" /> : <Search className="w-5 h-5" />}
               </button>
             </div>
 
