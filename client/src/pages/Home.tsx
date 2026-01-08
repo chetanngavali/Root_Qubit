@@ -39,9 +39,10 @@ export default function Home() {
                 <h1 className="text-7xl md:text-9xl lg:text-[10rem] font-black tracking-tighter leading-[0.8] font-sans mb-4">
                   SPACE<span className="text-transparent bg-clip-text bg-gradient-to-br from-black via-gray-700 to-gray-400">HUHN</span>
                 </h1>
-                <div className="flex items-center gap-4 justify-center">
+                <div className="flex items-center gap-6 justify-center">
                   <div className="h-px w-20 bg-black/10" />
                   <p className="text-accent font-mono text-sm font-black tracking-[0.4em] uppercase">Technologies</p>
+                  <Shield className="w-5 h-5 text-accent" />
                   <div className="h-px w-20 bg-black/10" />
                 </div>
               </div>
